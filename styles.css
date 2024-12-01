@@ -1,0 +1,117 @@
+/* Reset dan dasar */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #000; /* Background hitam solid */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Kontainer utama */
+.thank-you-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.thank-you-box {
+    background: #fff; /* Warna putih untuk kotak */
+    color: #000; /* Warna teks hitam */
+    padding: 30px 40px;
+    text-align: center;
+    border: 2px solid #5ab2ff; /* Garis biru cerah di sekitar kotak */
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Drop shadow */
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animasi garis bergerak */
+.thank-you-box::before,
+.thank-you-box::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #5ab2ff;
+    animation: slide-horizontal 3s linear infinite;
+}
+.thank-you-box::before {
+    top: 0;
+    left: 0;
+}
+.thank-you-box::after {
+    bottom: 0;
+    right: 0;
+    animation-direction: reverse;
+}
+
+/* Judul dengan animasi */
+.animated-title {
+    font-size: 2.5em;
+    margin: 0 0 15px;
+    animation: fade-in 2s ease-in-out, move-up 2s ease-in-out;
+    color: #5ab2ff;
+}
+
+/* Teks deskripsi */
+.thank-you-box p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+/* Tombol kembali ke home */
+.home-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1em;
+    color: #fff;
+    background: #5ab2ff;
+    border: none;
+    text-decoration: none;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(90, 178, 255, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.home-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(90, 178, 255, 0.8);
+}
+
+/* Animasi */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes move-up {
+    from {
+        transform: translateY(20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-horizontal {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
